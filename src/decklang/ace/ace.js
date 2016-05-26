@@ -15,9 +15,11 @@ ace.define('ace/snippets/decklang', (require, exports) => {
   exports.snippetText = `
 snippet loop
 	loop = <\${1:i} = \${2:1}> to \${3:10}
+		\${4}
 	endloop
 snippet loopin
 	loop = <\${1:item}> in { \${2} }
+		\${3}
 	endloop`;
 
   exports.scope = "decklang"
