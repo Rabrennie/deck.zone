@@ -1,11 +1,20 @@
 import plugins from '../plugins.json';
 import decklangLight from './ace-decklang-light.less';
 
+
 // generate a list of valid plugin names for the syntax highlighter
 const pluginNames = plugins.map(str => {
   const split = str.split('/');
   return split[split.length-1].split('.')[0];
 });
+
+// require language tools for snippets to work
+require('brace/ext/language_tools.js');
+
+ace.define('ace/snippets/decklang', (require, exports) => {
+  exports.snippetText = "snippet loop \n\
+loop ${1:test}"
+})
 
 ace.define('ace/mode/decklang', (require, exports) => {
 
